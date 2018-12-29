@@ -698,6 +698,7 @@ id btn2
 id btn3
 id btn_name
 id btn_nickname
+id btn_tarot
 id buttonPanel
 id center
 id center_horizontal
@@ -854,6 +855,7 @@ layout abc_tooltip
 layout activity_main
 layout activity_name
 layout activity_nick_name
+layout activity_tarot
 layout fragment_a
 layout fragment_b
 layout fragment_c

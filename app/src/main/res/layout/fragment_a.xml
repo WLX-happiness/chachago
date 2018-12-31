@@ -10,18 +10,18 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="2">
-
+        <!--F05A28-->
         <Button
             android:id="@+id/btn_name"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#F05A28"
+            android:background="#fff"
             android:gravity="center"
             android:text="이름"
-            android:textColor="#fff"
+            android:textColor="#1EDA69"
             android:textSize="30sp" />
-
+        <!--#F7931E-->
         <Button
             android:id="@+id/btn_nickname"
             android:layout_weight="1"
@@ -30,8 +30,8 @@
             android:text="별명"
             android:gravity="center"
             android:textSize="30sp"
-            android:textColor="#fff"
-            android:background="#F7931E" />
+            android:background="#fff"
+            android:textColor="#FFC600" />
 
     </LinearLayout>
 

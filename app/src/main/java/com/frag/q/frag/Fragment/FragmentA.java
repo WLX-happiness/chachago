@@ -1,23 +1,38 @@
 package com.frag.q.frag.Fragment;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.frag.q.frag.NameActivity;
 import com.frag.q.frag.NickNameActivity;
 import com.frag.q.frag.R;
 
-import org.w3c.dom.Text;
-
 public class FragmentA extends Fragment {
-
     Button btn_name;
     Button btn_nickname;
 
@@ -42,6 +57,8 @@ public class FragmentA extends Fragment {
                 startActivityForResult(intent, 100);
             }
         });
+
+
         return v;
 
 

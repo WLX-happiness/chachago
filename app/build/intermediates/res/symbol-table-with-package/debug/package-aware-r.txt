@@ -704,9 +704,12 @@ id bottom
 id btn1
 id btn2
 id btn3
+id btnBack
+id btnGo
 id btn_name
 id btn_nickname
 id button
+id button2
 id buttonPanel
 id center
 id center_horizontal
@@ -717,6 +720,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id container
 id content
 id contentPanel
 id custom
@@ -727,6 +731,7 @@ id dimensions
 id direct
 id disableHome
 id edit_query
+id edtUrl
 id end
 id expand_activities_button
 id expanded_menu
@@ -816,7 +821,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView2
 id time
 id title
 id titleDividerNoCustom
@@ -826,6 +830,7 @@ id topPanel
 id uniform
 id up
 id useLogo
+id webView1
 id withText
 id wrap
 id wrap_content
@@ -866,6 +871,7 @@ layout activity_gallery
 layout activity_main
 layout activity_name
 layout activity_nick_name
+layout activity_web
 layout dialog
 layout fragment_a
 layout fragment_b

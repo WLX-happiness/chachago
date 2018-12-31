@@ -976,6 +976,10 @@
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\874a7f081939c2565c070a3981f33bd6\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
+        "merged": "C:\\Users\\q\\AndroidStudioProjects\\frag\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_web.xml.flat",
+        "source": "C:\\Users\\q\\AndroidStudioProjects\\frag\\app\\src\\main\\res\\layout\\activity_web.xml"
+    },
+    {
         "merged": "C:\\Users\\q\\AndroidStudioProjects\\frag\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\q\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\874a7f081939c2565c070a3981f33bd6\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },

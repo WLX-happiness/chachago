@@ -43,14 +43,6 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        fragmentB = new FragmentB();
-        Button btn2 = (Button) findViewById(R.id.btn2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentB).commit();
-            }
-        });
 
         if(findViewById(R.id.fragment_container) != null){
 

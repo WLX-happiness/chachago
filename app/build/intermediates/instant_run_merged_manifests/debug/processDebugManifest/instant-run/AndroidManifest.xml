@@ -31,6 +31,9 @@
         <activity
             android:name="com.frag.q.frag.NickNameActivity"
             android:parentActivityName="com.frag.q.frag.MainActivity" />
+        <activity
+            android:name="com.frag.q.frag.GalleryActivity"
+            android:parentActivityName="com.frag.q.frag.MainActivity" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

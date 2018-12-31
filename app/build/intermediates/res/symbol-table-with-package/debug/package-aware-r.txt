@@ -643,8 +643,14 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable chrysanthemum
+drawable desert
+drawable hydranges
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable jellyfish
+drawable koala
+drawable lighthouse
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -657,8 +663,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable penguins
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable tulips
 id ALT
 id CTRL
 id FUNCTION
@@ -698,6 +706,7 @@ id btn2
 id btn3
 id btn_name
 id btn_nickname
+id button
 id buttonPanel
 id center
 id center_horizontal
@@ -727,6 +736,7 @@ id fill_vertical
 id forever
 id fragment_container
 id gone
+id gridView1
 id group_divider
 id groups
 id home
@@ -739,6 +749,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id ivPoster
 id left
 id line1
 id line3
@@ -851,9 +862,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_gallery
 layout activity_main
 layout activity_name
 layout activity_nick_name
+layout dialog
 layout fragment_a
 layout fragment_b
 layout fragment_c

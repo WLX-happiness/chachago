@@ -82,10 +82,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
-    public void changeFragment(int index){
-        if (index == 0) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentB).commit();
-        }
-    }
 }

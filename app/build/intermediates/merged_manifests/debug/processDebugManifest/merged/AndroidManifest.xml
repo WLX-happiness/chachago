@@ -50,6 +50,13 @@
             android:name="com.frag.q.frag.TarotActivity"
             android:parentActivityName="com.frag.q.frag.MainActivity" />
         <activity
+            android:name="com.frag.q.frag.GalleryActivity"
+            android:parentActivityName="com.frag.q.frag.MainActivity" />
+        <activity
+            android:name="com.frag.q.frag.WebActivity"
+            android:label="웹브라우저"
+            android:parentActivityName="com.frag.q.frag.MainActivity" />
+        <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />

@@ -776,9 +776,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id btn1
-id btn2
-id btn3
 id btnBack
 id btnGo
 id btn_name
@@ -818,7 +815,6 @@ id fill
 id fill_horizontal
 id fill_vertical
 id forever
-id fragment_container
 id gone
 id gridView1
 id group_divider
@@ -857,6 +853,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id packed
+id pager
 id parent
 id parentPanel
 id percent

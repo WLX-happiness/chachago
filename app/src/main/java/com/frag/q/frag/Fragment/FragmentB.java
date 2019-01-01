@@ -27,6 +27,16 @@ public class FragmentB extends Fragment {
 
     Button button;
 
+    public static FragmentB newInstance(){
+        FragmentB fragmentB = new FragmentB();
+        return fragmentB;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

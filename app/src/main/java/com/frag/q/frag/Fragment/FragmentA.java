@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -35,6 +36,16 @@ import com.frag.q.frag.R;
 public class FragmentA extends Fragment {
     Button btn_name;
     Button btn_nickname;
+
+    public static FragmentA newInstance(){
+        FragmentA fragmentA = new FragmentA();
+        return fragmentA;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){

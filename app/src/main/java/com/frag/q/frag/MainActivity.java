@@ -1,52 +1,90 @@
 package com.frag.q.frag;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.frag.q.frag.Fragment.FragmentA;
 import com.frag.q.frag.Fragment.FragmentB;
 import com.frag.q.frag.Fragment.FragmentC;
+import com.frag.q.frag.mRecyclerView.CustomFragmentPagerAdapter;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private ViewPager viewPager;
+    ActionBar bar;
+    private FragmentManager fm;
+    private ArrayList<Fragment> fList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(findViewById(R.id.fragment_container) != null){
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        fm = getSupportFragmentManager();
 
-            if(savedInstanceState != null){
-                return;
-            }
-            FragmentA firstFragment = new FragmentA();
-            firstFragment.setArguments(getIntent().getExtras());
+        bar = getSupportActionBar();
+        bar.setDisplayShowTitleEnabled(true);
+        bar.setTitle("Project 1");
+        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
-        }
+        ActionBar.Tab tab1 = bar.newTab().setText("Tab1").setTabListener(tabListener);
+        ActionBar.Tab tab2 = bar.newTab().setText("Tab2").setTabListener(tabListener);
+        ActionBar.Tab tab3 = bar.newTab().setText("Tab3").setTabListener(tabListener);
+
+        bar.addTab(tab1);
+        bar.addTab(tab2);
+        bar.addTab(tab3);
+
+        fList = new ArrayList<Fragment>();
+        fList.add(FragmentA.newInstance());
+        fList.add(FragmentB.newInstance());
+        fList.add(FragmentC.newInstance());
+
+        viewPager.setOnPageChangeListener(viewPagerListener);
+
+        CustomFragmentPagerAdapter adapter = new CustomFragmentPagerAdapter(fm, fList);
+        viewPager.setAdapter(adapter);
     }
 
-    public void selectFragment(View view){
-        Fragment fr = null;
-        switch (view.getId()){
-            case R.id.btn1:
-                fr = new FragmentA();
-                break;
-            case R.id.btn2:
-                fr = new FragmentB();
-                break;
-            case R.id.btn3:
-                fr = new FragmentC();
+    ViewPager.SimpleOnPageChangeListener viewPagerListener = new ViewPager.SimpleOnPageChangeListener() {
+        @Override
+        public void onPageSelected(int position) {
+            super.onPageSelected(position);
+
+            bar.setSelectedNavigationItem(position);
         }
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fr);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
+    };
+
+    ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+        @Override
+        public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+            viewPager.setCurrentItem(tab.getPosition());
+        }
+
+        @Override
+        public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+        }
+
+        @Override
+        public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+        }
+    };
 }

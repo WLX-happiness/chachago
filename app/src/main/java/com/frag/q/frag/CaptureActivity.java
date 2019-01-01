@@ -2,7 +2,6 @@ package com.frag.q.frag;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,12 +19,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -66,7 +60,6 @@ public class CaptureActivity extends AppCompatActivity {
                 captureCamera();
             }
         });
-
         btn_album.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

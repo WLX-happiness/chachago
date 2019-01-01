@@ -45,15 +45,6 @@ public class FragmentA extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_a, container, false);
 
-//        btn_name = (Button) v.findViewById(R.id.btn_name);
-//        btn_name.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), NameActivity.class);
-//                startActivityForResult(intent, 100);
-//            }
-//        });
-
         btn_nickname1 = (Button) v.findViewById(R.id.btn_nickname1);
         btn_nickname1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +54,6 @@ public class FragmentA extends Fragment {
             }
         });
 
-
         btn_nickname2 = (Button) v.findViewById(R.id.btn_nickname2);
         btn_nickname2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +62,6 @@ public class FragmentA extends Fragment {
                 startActivityForResult(intent, 100);
             }
         });
-
-
         return v;
-
-
     }
-
 }

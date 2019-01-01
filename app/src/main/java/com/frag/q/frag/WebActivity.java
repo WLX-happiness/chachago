@@ -1,11 +1,8 @@
 package com.frag.q.frag;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -13,8 +10,6 @@ import android.widget.EditText;
 
 public class WebActivity extends AppCompatActivity {
 
-    EditText edtUrl;
-    Button btnGo, btnBack;
     WebView web;
 
     @Override

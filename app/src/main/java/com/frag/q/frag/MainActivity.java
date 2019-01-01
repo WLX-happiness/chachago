@@ -1,30 +1,21 @@
 package com.frag.q.frag;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
 import com.frag.q.frag.Fragment.FragmentA;
 import com.frag.q.frag.Fragment.FragmentB;
 import com.frag.q.frag.Fragment.FragmentC;
-import com.frag.q.frag.CustomFragmentPagerAdapter;
 
 import java.util.ArrayList;
 
@@ -33,11 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ActionBar bar;
     private FragmentManager fm;
     private ArrayList<Fragment> fList;
-    private static final int MY_PERMISSION_CAMERA = 1111;
-    private static final int REQUEST_TAKE_PHOTO = 2222;
-    private static final int REQUEST_TAKE_ALBUM = 3333;
-    private static final int REQUEST_IMAGE_CROP = 4444;
     public static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
+    private final int MY_PERMISSIONS_RECORD_AUDIO = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -90,30 +78,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-
-                } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
-
     ViewPager.SimpleOnPageChangeListener viewPagerListener = new ViewPager.SimpleOnPageChangeListener() {
         @Override
         public void onPageSelected(int position) {
@@ -139,4 +103,39 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+    static final int REQUEST_PERMISSIONS = 1;
+    private static String[] PERMISSIONS = {
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.WRITE_CONTACTS,
+            Manifest.permission.RECORD_AUDIO,
+    };
+
+    public static boolean verifyPermission(int[] grantresults){
+        if(grantresults.length<1){
+            return false;
+        }
+        for(int result: grantresults){
+            if(result != PackageManager.PERMISSION_GRANTED){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        if(requestCode == MainActivity.REQUEST_PERMISSIONS){
+
+            if (MainActivity.verifyPermission(grantResults)) {
+
+                // permission was granted, yay! Do the
+                // contacts-related task you need to do.
+
+            } else {
+                super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+            }
+
+        }
+    }
 }

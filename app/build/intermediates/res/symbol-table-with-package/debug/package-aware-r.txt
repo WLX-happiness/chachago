@@ -691,6 +691,7 @@ drawable abc_vector_test
 drawable bt_corner
 drawable bt_white
 drawable bt_whitecorner
+drawable camera
 drawable chrysanthemum
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -778,10 +779,11 @@ id blocking
 id bottom
 id btnBack
 id btnGo
+id btn_album
+id btn_capture
 id btn_name
 id btn_nickname
 id btn_tarot
-id button
 id button01
 id buttonPanel
 id cancel_action
@@ -816,7 +818,6 @@ id fill_horizontal
 id fill_vertical
 id forever
 id gone
-id gridView1
 id group_divider
 id groups
 id home
@@ -832,6 +833,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id ivPoster
+id iv_view
 id left
 id light
 id line1
@@ -953,6 +955,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_capture
 layout activity_gallery
 layout activity_main
 layout activity_name
@@ -1450,3 +1453,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths

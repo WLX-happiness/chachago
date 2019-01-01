@@ -38,9 +38,28 @@
             android:name=".GalleryActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".CaptureActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".WebActivity"
             android:parentActivityName=".MainActivity"
             android:label="웹브라우저"/>
+
+        <provider
+            android:authorities="com.frag.q.frag"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
     </application>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera2"/>
 
 </manifest>

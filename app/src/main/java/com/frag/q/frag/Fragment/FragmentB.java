@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 
 
+import com.frag.q.frag.CaptureActivity;
 import com.frag.q.frag.GalleryActivity;
 import com.frag.q.frag.MainActivity;
 import com.frag.q.frag.NameActivity;
@@ -25,7 +26,7 @@ import com.frag.q.frag.R;
 
 public class FragmentB extends Fragment {
 
-    Button button;
+    Button btn_capture, btn_album;
 
     public static FragmentB newInstance(){
         FragmentB fragmentB = new FragmentB();
@@ -42,8 +43,17 @@ public class FragmentB extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_b, container, false);
 
-        button = (Button) v.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_capture = (Button) v.findViewById(R.id.btn_capture);
+        btn_capture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CaptureActivity.class);
+                startActivityForResult(intent, 100);
+            }
+        });
+
+        btn_album = (Button) v.findViewById(R.id.btn_album);
+        btn_album.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), GalleryActivity.class);
@@ -52,11 +62,5 @@ public class FragmentB extends Fragment {
         });
 
         return v;
-    }
-
-    public static class MyGridAdapter {
-        public MyGridAdapter(GalleryActivity galleryActivity) {
-
-        }
     }
 }

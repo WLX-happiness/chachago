@@ -12,11 +12,13 @@ import android.widget.Button;
 
 import com.frag.q.frag.CaptureActivity;
 import com.frag.q.frag.GalleryActivity;
+import com.frag.q.frag.ImageActivity;
 import com.frag.q.frag.R;
 
 public class FragmentB extends Fragment {
 
     Button btn_capture, btn_album;
+    Button button;
 
     public static FragmentB newInstance(){
         FragmentB fragmentB = new FragmentB();
@@ -50,6 +52,15 @@ public class FragmentB extends Fragment {
                 startActivityForResult(intent, 100);
             }
         });
+        button = (Button) v.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ImageActivity.class);
+                startActivityForResult(intent, 100);
+            }
+        });
+
         return v;
     }
 }

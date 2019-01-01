@@ -41,6 +41,9 @@
             android:name=".CaptureActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".ImageActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".WebActivity"
             android:parentActivityName=".MainActivity"
             android:label="웹브라우저"/>

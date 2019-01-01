@@ -44,48 +44,48 @@ public class ContactListActivity extends Activity {
 		setContentView(R.layout.activity_nick_name);
 		lv_contactlist = (ListView) findViewById(R.id.lv_contactlist);
 
-		if (ContextCompat.checkSelfPermission(this,
-				Manifest.permission.READ_CONTACTS)
-				!= PackageManager.PERMISSION_GRANTED) {
-
-			// Should we show an explanation?
-			if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-					Manifest.permission.READ_CONTACTS)) {
-			} else {
-				ActivityCompat.requestPermissions(ContactListActivity.this,
-						new String[]{Manifest.permission.READ_CONTACTS},
-						MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-
-				// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-				// app-defined int constant. The callback method gets the
-				// result of the request.
-			}
-		}
+//		if (ContextCompat.checkSelfPermission(this,
+//				Manifest.permission.READ_CONTACTS)
+//				!= PackageManager.PERMISSION_GRANTED) {
+//
+//			// Should we show an explanation?
+//			if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+//					Manifest.permission.READ_CONTACTS)) {
+//			} else {
+//				ActivityCompat.requestPermissions(ContactListActivity.this,
+//						new String[]{Manifest.permission.READ_CONTACTS},
+//						MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+//
+//				// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+//				// app-defined int constant. The callback method gets the
+//				// result of the request.
+//			}
+//		}
 	}
 
-	@Override
-	public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-		switch (requestCode) {
-			case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
-				// If request is cancelled, the result arrays are empty.
-				if (grantResults.length > 0
-						&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-					// permission was granted, yay! Do the
-					// contacts-related task you need to do.
-
-				} else {
-
-					// permission denied, boo! Disable the
-					// functionality that depends on this permission.
-				}
-				return;
-			}
-
-			// other 'case' lines to check for other
-			// permissions this app might request
-		}
-	}
+//	@Override
+//	public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+//		switch (requestCode) {
+//			case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+//				// If request is cancelled, the result arrays are empty.
+//				if (grantResults.length > 0
+//						&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//					// permission was granted, yay! Do the
+//					// contacts-related task you need to do.
+//
+//				} else {
+//
+//					// permission denied, boo! Disable the
+//					// functionality that depends on this permission.
+//				}
+//				return;
+//			}
+//
+//			// other 'case' lines to check for other
+//			// permissions this app might request
+//		}
+//	}
 
 	@Override
 	protected void onResume() {

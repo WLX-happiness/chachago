@@ -5,26 +5,27 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.1"
-    timestamp="1546316060540"
+    timestamp="1546316451304"
     token="-596054098493742091"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="143" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="29" />
     <task
         name="verifier"
-        duration="0" />
+        duration="5" />
 
     <artifact
-        location="C:\Users\q\AndroidStudioProjects\frag\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Users\q\AndroidStudioProjects\frag\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
 
     <build
@@ -73,19 +74,19 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1546316041087"
+        timestamp="1546316342898"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\q\AndroidStudioProjects\frag\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\q\AndroidStudioProjects\frag\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1546316060540"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1546316451304"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\q\AndroidStudioProjects\frag\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="C:\Users\q\AndroidStudioProjects\frag\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
     </build>
 

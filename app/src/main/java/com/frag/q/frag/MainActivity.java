@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import com.frag.q.frag.Fragment.FragmentA;
 import com.frag.q.frag.Fragment.FragmentB;
 import com.frag.q.frag.Fragment.FragmentC;
-import com.frag.q.frag.mRecyclerView.CustomFragmentPagerAdapter;
+import com.frag.q.frag.CustomFragmentPagerAdapter;
 
 import java.util.ArrayList;
 
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         bar.setTitle("Project 1");
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        ActionBar.Tab tab1 = bar.newTab().setText("Tab1").setTabListener(tabListener);
-        ActionBar.Tab tab2 = bar.newTab().setText("Tab2").setTabListener(tabListener);
-        ActionBar.Tab tab3 = bar.newTab().setText("Tab3").setTabListener(tabListener);
+        ActionBar.Tab tab1 = bar.newTab().setText("NUMBERS").setTabListener(tabListener);
+        ActionBar.Tab tab2 = bar.newTab().setText("IMAGE").setTabListener(tabListener);
+        ActionBar.Tab tab3 = bar.newTab().setText("SEARCH").setTabListener(tabListener);
 
         bar.addTab(tab1);
         bar.addTab(tab2);

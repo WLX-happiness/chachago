@@ -113,11 +113,11 @@
                 {
                     "source": "C:\\Users\\q\\AndroidStudioProjects\\frag\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "-1,2,3",
-                        "startColumns": "-1,4,4",
-                        "startOffsets": "-1,57,105",
-                        "endColumns": "-1,46,50",
-                        "endOffsets": "-1,99,151"
+                        "startLines": "4,-1,-1",
+                        "startColumns": "4,-1,-1",
+                        "startOffsets": "157,-1,-1",
+                        "endColumns": "45,-1,-1",
+                        "endOffsets": "198,-1,-1"
                     },
                     "to": {
                         "startLines": "153,154,155",

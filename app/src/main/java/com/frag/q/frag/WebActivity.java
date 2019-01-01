@@ -1,8 +1,10 @@
 package com.frag.q.frag;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -20,37 +22,24 @@ public class WebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
-        edtUrl = (EditText) findViewById(R.id.edtUrl);
-        btnGo = (Button) findViewById(R.id.btnGo);
-        btnBack = (Button) findViewById(R.id.btnBack);
-        web = (WebView) findViewById(R.id.webView1);
+        // 시리 검색시 웹뷰를 띄움
+        setTitle("Search");
+        web = new WebView(this);
+        web.setWebChromeClient(new WebChromeClient());
+        web.setWebViewClient(new WebViewClient());
+        web.getSettings().setJavaScriptEnabled(true);
 
-        web.setWebViewClient(new CookWebViewClient());
-
-        WebSettings webSet = web.getSettings();
-        webSet.setBuiltInZoomControls(true);
-
-        btnGo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (edtUrl.getText().toString().length()==0){
-                    edtUrl.setText("http://google.com");
-                }
-                web.loadUrl(edtUrl.getText().toString());
-            }
-        });
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                web.loadUrl(edtUrl.getText().toString());
-            }
-        });
+        String keyWord = getIntent().getStringExtra("value");
+        web.loadUrl("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=" + keyWord);
+        setContentView(web);
     }
-    class CookWebViewClient extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            return super.shouldOverrideUrlLoading(view, url);
+
+    @Override
+    public void onBackPressed() {
+        if (web.canGoBack()) {
+            web.goBack();
+        } else {
+            finish();
         }
     }
 }

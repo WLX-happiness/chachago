@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         bar = getSupportActionBar();
         bar.setDisplayShowTitleEnabled(true);
-        bar.setTitle("Project 1");
+        bar.setTitle("CHACHAGO");
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         ActionBar.Tab tab1 = bar.newTab().setText("NUMBERS").setTabListener(tabListener);

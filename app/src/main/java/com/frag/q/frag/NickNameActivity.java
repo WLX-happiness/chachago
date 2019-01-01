@@ -1,69 +1,48 @@
 package com.frag.q.frag;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-
-import com.frag.q.frag.mRecyclerView.ListItem;
-import com.frag.q.frag.mRecyclerView.MyAdapter;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+import android.view.View;
+import android.widget.TextView;
 
 public class NickNameActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private List<ListItem> listItems;
+    public static final String SELECTED_PHONE = "selectedphone";
+    public static final int SUCCESS = 1;
+    public static final int FAIL = -1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nick_name);
+        findViewById(R.id.bt_get_contact).setOnClickListener(new View.OnClickListener() {
 
-        recyclerView = (RecyclerView) findViewById(R.id.nickname_recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
-        listItems = new ArrayList<>();
-
-        String json = null;
-
-        // JSON parsing
-        try {
-
-            InputStream is = getAssets().open("nick_numbers.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray array = jsonObject.getJSONArray("numbers");
-
-            for(int i = 0; i < array.length(); i++) {
-                JSONObject o = array.getJSONObject(i);
-                ListItem item = new ListItem(
-                        o.getString("nick"),
-                        o.getString("number")
-                );
-
-                listItems.add(item);
+            @Override
+            public void onClick(View v) {
+                showContactlist();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10001) {
+            if (resultCode == SUCCESS) {
+                ((TextView) findViewById(R.id.tv_selected_phone)).setText(data.getStringExtra(SELECTED_PHONE));
+            } else {
+                ((TextView) findViewById(R.id.tv_selected_phone)).setText("");
+            }
         }
+    }
 
-//        listItems.add(new ListItem("김김", "010-2306-4143"));
-//        listItems.add(new ListItem("조조", "010-0000-0000"));
+    private void showContactlist() {
+        Intent intent = new Intent(NickNameActivity.this,
+                ContactListActivity.class)
+                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
-        adapter = new MyAdapter(listItems, this);
-        recyclerView.setAdapter(adapter);
+        startActivityForResult(intent, 10001);
     }
 }

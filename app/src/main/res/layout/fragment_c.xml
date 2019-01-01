@@ -22,7 +22,8 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingBottom="8dp"
-            android:text="음성메모가 필요하신가요?"
+            android:text="Hello, Siri"
+            android:textAllCaps="false"
             android:textColor="#ffffff"
             android:background="@drawable/bt_corner"/>
 

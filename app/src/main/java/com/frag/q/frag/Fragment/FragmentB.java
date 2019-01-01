@@ -20,7 +20,6 @@ import android.widget.ListAdapter;
 import com.frag.q.frag.CaptureActivity;
 import com.frag.q.frag.GalleryActivity;
 import com.frag.q.frag.MainActivity;
-import com.frag.q.frag.NameActivity;
 import com.frag.q.frag.NickNameActivity;
 import com.frag.q.frag.R;
 
